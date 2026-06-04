@@ -1,0 +1,11 @@
+# Deutsch Hub
+
+> Plataforma completa de alemão para brasileiros: cursos A1 ao B1, flashcards com repetição espaçada (SRS), tutor IA e preparação para os exames Goethe.
+
+Deutsch Hub é um aplicativo web em português brasileiro para quem quer aprender alemão de forma estruturada — com lições, áudio nativo, exercícios, flashcards SRS, tutor de IA e simulados no formato Goethe.
+
+## Pages
+
+- [Página inicial](/): Apresentação da plataforma, recursos e como começar.
+- [Criar conta](/signup): Cadastro gratuito para começar a aprender alemão.
+- [Entrar](/login): Acesso à sua conta Deutsch Hub.

@@ -1,0 +1,15 @@
+ALTER TABLE public.learning_errors
+  ADD COLUMN IF NOT EXISTS state public.srs_state NOT NULL DEFAULT 'new',
+  ADD COLUMN IF NOT EXISTS ease REAL NOT NULL DEFAULT 2.5,
+  ADD COLUMN IF NOT EXISTS interval_days INTEGER NOT NULL DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS reps INTEGER NOT NULL DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS lapses INTEGER NOT NULL DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS streak INTEGER NOT NULL DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS due_at TIMESTAMPTZ NOT NULL DEFAULT now();
+
+CREATE INDEX IF NOT EXISTS learning_errors_user_due_idx
+  ON public.learning_errors(user_id, due_at)
+  WHERE resolved_at IS NULL;
+
+NOTIFY pgrst, 'reload schema';
+
